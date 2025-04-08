@@ -35,13 +35,13 @@
         <td align="center"><img src="https://private-user-images.githubusercontent.com/190439817/431176224-e91a267f-d33d-4500-9c82-3cba161c23b7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQwNzg2OTksIm5iZiI6MTc0NDA3ODM5OSwicGF0aCI6Ii8xOTA0Mzk4MTcvNDMxMTc2MjI0LWU5MWEyNjdmLWQzM2QtNDUwMC05YzgyLTNjYmExNjFjMjNiNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDA4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQwOFQwMjEzMTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wZDY1NmUwMTAwMGY4NWQ5ZGM1NzA2NGI2YzAxYzBkOTQyNTMyY2U4MDVhNWNkNjY0N2IzMDMzNmFmYTgyMmUwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.FBRgzPYgmb21Y9a8Gj6HcJSkEEVNzdLcYaPCRfEwwf0" width="300" height="300" /><br />14. 마이페이지</td>
     </tr>
 </table>
----
+
 
 ---
 
 ## 프로젝트 개요
 
-- **프로젝트명**: 댕근 (DaengGeun)
+- **프로젝트명**: 댕근
 - **목표**: 반려견 산책 메이트 매칭, 실시간 채팅, 커뮤니티, 마켓 기능을 통해 반려견 보호자 간의 활발한 교류를 지원하는 플랫폼 구축
 
 ---
@@ -115,7 +115,7 @@
 
 ### 필수
 - 회원가입/로그인 처리 (S3 포함)
-- 게시판 기본 기능
+- 커뮤니티 게시판
 - 마이페이지 기본 수정
 
 ### 중요
@@ -126,6 +126,7 @@
 - 실시간 채팅방 생성
 - 박람회 및 랭킹 기능
 - 마켓 상품 정렬/댓글
+- 인기 강아지 랭킹
 
 ---
 
@@ -151,7 +152,7 @@
 
 ## 커뮤니케이션 계획
 
-- **주 2회 오프라인 회의**
+- **주 2회 오프라인 및 온라인 회의**
 - **GitHub Issues**를 통한 실시간 이슈 관리
 
 ---
