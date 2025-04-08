@@ -1,0 +1,43 @@
+name: 프론트엔드 배포
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 체크아웃
+        uses: actions/checkout@v3
+
+      - name: 도커허브에 로그인
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER_NAME }}
+          password: ${{ secrets.DOCKER_USER_PW }}
+
+      - name: 프론트 이미지 빌드
+        run: docker build -t ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-fe .
+
+      - name: 이미지 푸시
+        run: docker push ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-fe
+
+      - name: AWS EC2에 ssh 접속 후 프론트 배포
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_IP }}
+          port: 22
+          username: ubuntu
+          key: ${{ secrets.AWS_KEY }}
+          script: |
+            timedatectl set-timezone Asia/Seoul
+            # 도커 캐시 클리어
+            docker rm -f $(docker ps -aq) || true
+            docker rmi -f $(docker images -aq) || true
+            docker volume prune -f || true
+            echo "S3_ACCESSKEY=${{ secrets.S3_ACCESSKEY }}" > .env
+            echo "S3_SECRETKEY=${{ secrets.S3_SECRETKEY }}" >> .env
+            docker pull ${{ secrets.DOCKER_USER_NAME }}/${{ secrets.DOCKER_IMAGE_NAME }}-fe
+            docker-compose up -d --force-recreate
