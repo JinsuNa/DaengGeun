@@ -161,44 +161,43 @@
 
 ## 프로젝트 구조 (개선 버전)
 
-- DaengGeun/
+- DaengGeun
   - README.md : 프로젝트 설명 문서
   - .gitignore : Git 무시 파일 설정
-  - .github/
-    - workflows/
-      - fe-deploy.yml : 프론트엔드 CI/CD 설정
-      - be-deploy.yml : 백엔드 CI/CD 설정
-  - frontend/ (React 기반)
-    - public/
-    - src/
-      - assets/ : 이미지, 폰트 등 정적 자산
-      - components/ : 공통 UI 컴포넌트
-      - hooks/ : 커스텀 React 훅
-      - pages/ : 라우트별 페이지
-      - apis/ : Axios API 함수 모음
-      - store/ : 상태관리 (Recoil, Redux 등)
-      - utils/ : 유틸 함수
+  - .github
+    - workflows
+      - fe-deploy.yml
+      - be-deploy.yml
+  - frontend
+    - public
+    - src
+      - assets
+      - components
+      - hooks
+      - pages
+      - apis
+      - store
+      - utils
       - App.tsx
-    - .env : 환경변수
-    - package.json : 프론트엔드 의존성 및 스크립트
-  - backend/ (Spring Boot 기반)
-    - src/
-      - main/
-        - java/com/daenggeun/
-          - config/ : 보안, WebSocket 등 설정
-          - controller/ : API 컨트롤러
-          - dto/ : 요청/응답 데이터 전송 객체
-          - entity/ : JPA 엔티티 클래스
-          - repository/ : DB 접근 레이어
-          - service/ : 비즈니스 로직
-          - DaengGeunApplication.java : 메인 실행 파일
+    - package.json
+  - backend
+    - src
+      - main
+        - java/com/daenggeun
+          - config
+          - controller
+          - dto
+          - entity
+          - repository
+          - service
+          - DaengGeunApplication.java
         - resources/
-          - application.yml : 설정 파일
-          - static/ : 정적 리소스
-    - Dockerfile : 백엔드용 도커 파일
-    - build.gradle : 빌드 설정
-  - docker/
-    - nginx/ : Nginx 설정
-    - docker-compose.yml : 전체 서비스 묶는 도커 컴포즈
+          - application.yml
+          - static
+    - Dockerfile
+    - build.gradle
+  - docker
+    - nginx
+    - docker-compose.yml
 
 
